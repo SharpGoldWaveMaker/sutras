@@ -1,0 +1,31 @@
+@import '../common.css';
+
+.su-collapse-action > img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    box-shadow: none;
+    transition: all 0.4s;
+    user-select: none;
+
+    .ant-row-rtl & {
+      right: 0;
+      left: auto;
+    }
+}
+
+.su-collapse-action > img.show {
+  opacity: 0.55;
+  pointer-events: auto;
+  &:hover {
+      opacity: 1;
+  }
+}
+
+.su-collapse-action > img.hide {
+  opacity: 0;
+  pointer-events: none;
+}

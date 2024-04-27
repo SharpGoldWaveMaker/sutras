@@ -1,0 +1,8 @@
+@import "../../style/styles.css";
+
+@include b('console-prop-name'){
+  font-weight: bold;
+  @include e('colon'){
+    margin-right: 6px;
+  }
+}

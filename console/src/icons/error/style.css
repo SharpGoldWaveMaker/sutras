@@ -1,0 +1,12 @@
+.su-console-error-icon{
+  display: inline-block;
+  text-align: center;
+  height: var(--su-console-line-height);
+  line-height: var(--su-console-line-height);
+  width: 12px;
+}
+
+.su-console-error-icon svg {
+  height: 100%;
+  width: 100%;
+}

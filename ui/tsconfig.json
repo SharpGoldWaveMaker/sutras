@@ -1,0 +1,29 @@
+{
+  "extends": "../tsconfig.base.json",
+  "compilerOptions": {
+    "target": "esnext",
+    "jsx": "preserve",
+    "lib": ["esnext", "dom", "dom.iterable"],
+    "baseUrl": ".",
+    "module": "esnext",
+    "moduleResolution": "Bundler",
+    "resolveJsonModule": true,
+    "types": ["vite/client"],
+    "strict": false,
+    "noUnusedLocals": true,
+    "outDir": "./dist",
+    "esModuleInterop": true,
+    "verbatimModuleSyntax": true,
+    "skipLibCheck": true
+  },
+  "include": [
+    "src",
+    "shims.d.ts",
+    "components.d.ts"
+  ],
+  "exclude": [
+    "scripts",
+    "**/dist/**",
+    "**/node_modules/**"
+  ]
+}

@@ -1,0 +1,7 @@
+@include b('browser-url'){
+  display: block;
+  height: 1.2em;
+  background-color: var(--vp-c-bg);
+  border-radius: 2px;
+  margin: 0 16px;
+}

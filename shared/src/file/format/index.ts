@@ -1,0 +1,1 @@
+export { formatSFC, formatSFCJS } from './sfc'

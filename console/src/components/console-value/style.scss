@@ -1,0 +1,11 @@
+@import "../../style/styles.css";
+
+@include b('console-value'){
+  margin-right: 4px;
+  &:last-child {
+    margin-right: 0;
+  }
+  // &:hover {
+  //   background-color: #F2F2F2;
+  // }
+}

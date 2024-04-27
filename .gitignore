@@ -1,0 +1,52 @@
+# Node.js 相关
+node_modules/
+npm-debug.log
+yarn-error.log
+yarn-debug.log
+package-lock.json
+yarn.lock
+
+# 编辑器目录和文件
+.vscode/
+.idea/
+*.sublime-workspace
+
+# 操作系统产生的文件
+.DS_Store
+Thumbs.db
+
+# 构建输出
+/dist
+/build
+/out
+/cache
+
+# 测试文件
+/coverage
+/.nyc_output
+
+# 日志文件
+*.log
+
+# 个人私密配置文件
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Monorepo 管理工具特定文件
+# 如果使用 Lerna
+lerna-debug.log
+/lerna.json
+
+# 如果使用 Yarn Workspaces
+.yarn/
+.pnp.js
+.pnp.cjs
+.pnp.mjs
+.pnp.loader.mjs
+
+# 其他常见忽略项
+/temp
+/tmp

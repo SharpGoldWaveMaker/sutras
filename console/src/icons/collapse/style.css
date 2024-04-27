@@ -1,0 +1,13 @@
+.su-console-collapse-icon{
+  display: inline-block;
+  text-align: center;
+  height: var(--su-console-line-height);
+  line-height: var(--su-console-line-height);
+  width: 8px;
+  cursor: pointer;
+}
+
+.su-console-collapse-icon svg {
+  height: 100%;
+  width: 100%;
+}

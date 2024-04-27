@@ -1,0 +1,7 @@
+@import "../../style/styles.css";
+
+@include b('console-value-static'){
+  @include e('number'){
+    color: #0643A0;
+  }
+}

@@ -1,0 +1,71 @@
+@include b('console-block'){
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  width: 100%;
+  $height: 18px;
+  $gap: 8px;
+  border-radius: 6px;
+  margin: 4px 0;
+  padding: 0 6px;
+  position: relative;
+
+  @include e('icon'){
+    flex: 0 0 auto;
+    width: $height;
+    height: $height;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-right: 8px;
+  }
+  @include e('main'){
+    flex: 1 1 auto;
+    line-height: $height;
+    position: relative;
+    clear: both;
+    @include e('extra'){
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: $height;
+      line-height: $height;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -2px;
+      width: 100%;
+      border-top: 1px solid var(--c-border);
+    }
+  }
+
+  @include m('warn'){
+    background-color: var(--su-console-bg-warning);
+    @include e('main'){
+      &::after {
+        display: none;
+      }
+    }
+  }
+  @include m('error'){
+    background-color: var(--su-console-bg-error);
+    @include e('main'){
+      &::after {
+        display: none;
+      }
+    }
+  }
+}
+
+@include b('console-block') {
+  &:last-child{
+    @include e('main'){
+      &::after {
+        display: none;
+      }
+    }
+  }
+}

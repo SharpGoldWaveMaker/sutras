@@ -1,0 +1,1 @@
+export { compileSFC } from './compile'

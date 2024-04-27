@@ -1,0 +1,1 @@
+export { transformTS } from './ts'

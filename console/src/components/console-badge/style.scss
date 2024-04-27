@@ -1,0 +1,21 @@
+@include b('console-badge'){
+  border-radius: 50%;
+  font-weight: bold;
+  background-color: var(--su-console-badge);
+  color: var(--su-console-badge-text);
+  padding: 0 4px;
+  font-size: 10px;
+  height: 14px;
+  line-height: 14px;
+  text-align: center;
+  @include m('warn'){
+    background-color: var(--su-console-badge-warn);
+  }
+  @include m('error'){
+    background-color: var(--su-console-badge-error);
+  }
+  @include m('debug'){
+    background-color: var(--su-console-badge-debug);
+  }
+}
+

@@ -1,0 +1,6 @@
+@import '../common.css';
+
+.su-fullscreen-action > svg{
+    height: 16px;
+    width: 16px;
+}

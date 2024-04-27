@@ -1,0 +1,54 @@
+{
+  "name": "@sgwm-sutras/shared",
+  "version": "0.0.1",
+  "description": "vitepress plugin for quickly build demo-centric technical documentation",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SharpGoldWaveMaker/sutras.git"
+  },
+  "keywords": ["sutras", "demo", "repl", "vitepress", "markdown", "ssg", "vue", "vite"],
+  "author": "skogkatt <wavemakers.sharpgold@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SharpGoldWaveMaker/sutras/issues"
+  },
+  "homepage": "https://sharpgoldwavemaker.github.io/sutras.docs",
+  "type": "module",
+  "main": "./dist/index.mjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.mts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.mts",
+      "default": "./dist/index.mjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "rimraf dist && rollup -c",
+    "dev": "rollup -cw"
+  },
+  "peerDependencies": {
+    "@vue/compiler-sfc": "^3.4.21",
+    "@vue/runtime-core": "^3.4.21",
+    "typescript": "^5.4.3"
+  },
+  "dependencies": {
+    "@vue/compiler-sfc": "^3.4.21",
+    "@vue/runtime-core": "^3.4.21",
+    "comment-parser": "^1.4.1",
+    "gray-matter": "^4.0.3",
+    "lodash-es": "^4.17.21",
+    "lru-cache": "^10.2.0",
+    "prettier": "^3.2.5",
+    "sucrase": "^3.35.0",
+    "typescript": "^5.4.3"
+  },
+  "devDependencies": {
+    "@types/lodash-es": "^4.17.12",
+    "@types/node": "^20.12.3",
+    "@types/prettier": "^3.0.0"
+  }
+}

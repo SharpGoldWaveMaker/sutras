@@ -1,0 +1,107 @@
+.code-panel {
+    overflow: hidden;
+    border-radius: 8px;
+    border: 1px solid var(--vp-c-gray-2);
+}
+
+.code-panel.edit{
+    border-color: var(--vp-c-brand-3);
+}
+
+.code-panel .header {
+    font-family: 'Consolas', 'DejaVu Sans Mono', 'Fira Code', 'Roboto Mono', monospace;
+    display: flex;
+    flex-direction: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: var(--vp-c-gray-soft);
+    border-bottom: 1px solid var(--vp-c-gray-2);
+}
+
+.code-panel.edit .header{
+    border-color: var(--vp-c-brand-3);
+}
+
+.code-panel .header .extra {
+    flex: 0 0 auto;
+    width: 100px;
+}
+.code-panel .header .file-tabs {
+    flex: 1 1  auto;
+}
+.code-panel .main {
+    background-color: var(--vp-code-block-bg);
+}
+
+.code-panel .main div[class*='language-'] {
+    margin: 0 !important;
+}
+.code-panel .main div[class*='language-'] >.copy {
+    display: none;
+}
+
+.code-panel .main .ant-spin-nested-loading>.ant-spin-container{
+    font-size: 16px!important;
+}
+
+.file-tabs {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    overflow: hidden;
+}
+
+.file-tabs .content {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    white-space: nowrap;
+    overflow: auto;
+    scrollbar-width: 0;
+}
+
+.file-tabs .tab.action {
+    flex: 0 0 auto;
+    padding: 0 .5rem;
+    box-shadow: 0 0.1em 0.5em 0 rgba(0, 0, 0, 0.1);
+}
+
+.file-tabs .tab.action:last-child{
+    border-left: 1px solid var(--vp-c-gray-1);
+}
+
+.file-tabs .content::-webkit-scrollbar {
+    display: none;
+}
+
+.file-tabs .tab {
+    flex: 0 0 auto;
+    display: inline-flex;
+    padding: 0 1rem;
+    height: 2rem;
+    place-items: center;
+    cursor: pointer;
+    border-right: 1px solid var(--vp-c-gray-1);
+    line-height: var(--vp-code-line-height);
+    font-size: var(--vp-code-font-size);
+}
+
+.file-tabs .tab:hover{
+    background-color: var(--vp-c-gray-2);
+}
+
+.file-tabs .tab.active {
+    color: var(--vp-c-brand-3);
+    background-color: var(--vp-c-gray-2);
+    font-weight: bold;
+}
+
+.file-tabs .tab .icon {
+    height: 1.2rem;
+    width: 1.2rem;
+    color: var(--vp-code-color)
+}

@@ -1,0 +1,83 @@
+.number {
+  color: var(--c-text-number);
+}
+.bint,
+.nill {
+  color: var(--c-text-bint);
+}
+.array-size {
+  color: var(--c-text-size);
+  margin-right: 4px;
+}
+.string,
+.regexp,
+.symbol {
+  color: var(--c-text-string);
+}
+.char-f {
+  color: var(--c-text-char-f);
+}
+.function,
+.char-f {
+  font-style: italic;
+}
+
+.propName {
+  color: var(--c-text-propName);
+  font-weight: 500;
+}
+.proto {
+  color: var(--c-text-proto) !important;
+}
+.propHidden {
+  color: var(--c-text-propHidden);
+}
+.propPreview {
+  color: var(--c-text-proto);
+}
+.is {
+  color: var(--c-text-two-dot);
+  margin-right: 0.7em;
+}
+
+.comma {
+  margin-right: 4px;
+}
+
+.element-tag {
+  color: var(--c-el-tag);
+}
+
+.element-propName {
+  color: var(--c-el-attr-key);
+}
+
+.element-propValue {
+  color: var(--c-el-attr-val);
+}
+
+.element-comment {
+  color: var(--c-el-comment);
+}
+
+.element-doctype {
+  color: var(--c-el-doctype);
+}
+
+.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.\!ml-0 {
+  margin-left: 0 !important;
+}
+
+.inline {
+  display: inline;
+}
+
+.mr-0 {
+  margin-right: 0;
+}

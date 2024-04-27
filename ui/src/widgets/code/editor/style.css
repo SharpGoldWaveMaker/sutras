@@ -1,0 +1,33 @@
+.code-editor {
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+.code-editor > span > div[class*=language-] {
+    background-color: var(--vp-c-bg);
+}
+
+
+.code-editor .editor {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+    padding: 20px 24px;
+    line-height: var(--vp-code-line-height);
+    font-family: var(--vp-font-family-mono);
+    font-size: var(--vp-code-font-size);
+    caret-color: rgb(156 163 175 / 1);
+    white-space: pre;
+    overflow: auto;
+    width: 100%;
+    height: 100%;
+    color: transparent;
+    background-color: transparent;
+    tab-size: 4;
+    resize: none;
+    overflow: hidden;
+}

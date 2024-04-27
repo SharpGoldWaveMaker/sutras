@@ -1,0 +1,27 @@
+.su-action {
+    position: relative;
+    width: 16px;
+    height: 16px;
+    font-size: 16px;
+    line-height: 16px;
+    color: var(--vp-c-text-2);
+    cursor: pointer;
+    transition: all 0.24s;
+    text-align: center;
+}
+
+.su-action:hover {
+    color: var(--vp-c-text-1);
+}
+
+.su-action.scale:hover {
+    transform: scale(1.2);
+}
+
+.su-action.small {
+    width: 12px;
+    height: 12px;
+    font-size: 12px;
+    line-height: 12px;
+}
+

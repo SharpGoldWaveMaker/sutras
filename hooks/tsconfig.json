@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "jsx": "preserve",
+    "lib": ["esnext", "DOM"],
+    "rootDir": ".",
+    "module": "esnext",
+    "moduleResolution": "Bundler",
+    "types": ["node"],
+    "allowJs": true,
+    "strict": true,
+    "strictNullChecks": true,
+    "noEmit": true,
+    "preserveValueImports": false,
+    "esModuleInterop": true,
+    "skipDefaultLibCheck": true,
+    "skipLibCheck": true
+  },
+  "include": [
+    "**/*.ts",
+    "prettier-standalone.d.ts",
+    "source-map-js.d.ts"
+  ],
+  "exclude": [
+    "node_modules/**",
+    "dist/**"
+  ]
+}

@@ -1,0 +1,10 @@
+packages:
+  - plugin
+  - ui
+  - shared
+  - hooks
+  - docs
+  - docs2
+  - examples/*
+  - console
+  - style

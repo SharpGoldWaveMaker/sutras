@@ -1,0 +1,124 @@
+@include b('preview-layout'){
+  height: 100%;
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid var(--vp-c-gray-2);
+  position: relative;
+
+  @include e('header'){
+    height: $preview-header-height;
+    background-color: var(--vp-c-gray-soft);
+    display: flex;
+    /* padding: 0 16px; */
+    align-items: center;
+  }
+
+  @include e('header-left'){
+    flex: 0 0 auto;
+    padding-left: 16px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+  @include e('header-right'){
+    flex: 0 0 auto;
+    padding-left: 8px;
+    border-left: 1px solid var(--vp-c-gray-2);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 8px;
+
+    &>div{
+      flex: 0 0 auto;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-start;
+
+      &::after{
+        content: '';
+        display: block;
+        height: 20px;
+        width: 1px;
+        background-color: var(--vp-c-gray-2);
+        margin: 0 4px;
+      }
+
+      &:last-child{
+        margin: 0;
+      }
+      &:last-child::after{
+        display: none;
+      }
+    }
+  }
+
+  @include e('header-center'){
+    flex: 1 1 auto;
+  }
+
+  @include e('main'){
+    height: 100%;
+    overflow: auto;
+    border-radius: 8px;
+  }
+
+  @include m(with-header){
+    @include e(main){
+      height: calc(100% - 2em);
+      border-radius: 0 0 8px 8px;
+    }
+  }
+
+  @include m(with-extra){
+    margin-top: $preview-header-height;
+  }
+
+  @include e('extra'){
+    position: absolute;
+    top: -$preview-header-height;
+    right: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 4px;
+
+    &>div{
+      flex: 0 0 auto;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-start;
+      margin-right: 8px;
+
+      &:last-child{
+        margin: 0;
+      }
+    }
+  }
+}
+
+
+@include b('preview-content'){
+  background-color: var(--vp-c-bg);
+  padding: 24px 16px;
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  @include m('compact'){
+    padding: 0;
+  }
+
+  &:deep(iframe){
+    margin: 0;
+    padding: 0;
+    width: 100%
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "name": "@sgwm-sutras/ui",
+  "type": "module",
+  "version": "0.0.1",
+  "description": "vitepress plugin for quickly build demo-centric technical documentation",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SharpGoldWaveMaker/sutras.git"
+  },
+  "keywords": ["sutras", "demo", "repl", "vitepress", "markdown", "ssg", "vue", "vite"],
+  "author": "skogkatt <wavemakers.sharpgold@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SharpGoldWaveMaker/sutras/issues"
+  },
+  "homepage": "https://sharpgoldwavemaker.github.io/sutras.docs",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    },
+    "./style": {
+      "import": "./dist/style.css",
+      "default": "./dist/style.css"
+    }
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "vite build"
+  },
+  "peerDependencies": {
+    "@ant-design/icons-vue": "^7.0.1",
+    "@sgwm-sutras/console": "workspace:^",
+    "@sgwm-sutras/hooks": "workspace:^",
+    "@sgwm-sutras/shared": "workspace:^",
+    "@vueuse/core": "^10.9.0",
+    "@vueuse/shared": "^10.9.0",
+    "ant-design-vue": "^4.1.2",
+    "vitepress": "1.0.0-rc.45",
+    "shiki": "^1.2.0",
+    "@shikijs/transformers": "^1.2.0",
+    "@sgwm-sutras/style": "workspace:^",
+    "splitpanes": "^3.1.5"
+  },
+  "dependencies": {
+    "@ant-design/icons-vue": "^7.0.1",
+    "@sgwm-sutras/console": "workspace:^",
+    "@sgwm-sutras/hooks": "workspace:^",
+    "@sgwm-sutras/shared": "workspace:^",
+    "@vueuse/core": "^10.9.0",
+    "@vueuse/shared": "^10.9.0",
+    "ant-design-vue": "^4.1.2",
+    "vitepress": "1.0.0-rc.45",
+    "shiki": "^1.2.0",
+    "@shikijs/transformers": "^1.2.0",
+    "@sgwm-sutras/style": "workspace:^",
+    "splitpanes": "^3.1.5"
+  },
+  "devDependencies": {
+    "@types/splitpanes": "^2.2.6",
+    "@vitejs/plugin-vue": "^5.0.4",
+    "@vitejs/plugin-vue-jsx": "^3.1.0",
+    "fast-glob": "^3.3.2",
+    "fs-extra": "^11.2.0",
+    "typescript": "^5.4.3",
+    "vite-bundle-analyzer": "^0.9.2",
+    "vite-plugin-dts": "^3.8.1",
+    "vite-svg-loader": "^5.1.0",
+    "vue-tsc": "^2.0.7"
+  }
+}

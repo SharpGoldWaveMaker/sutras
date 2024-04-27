@@ -1,0 +1,244 @@
+<!doctype html>
+<html>
+  <head>
+    <style>
+      html.dark {
+        color-scheme: dark;
+      }
+      body {
+        margin: 0;
+        width: 100%;
+        min-width: 320px;
+        line-height: 24px;
+        font-family: var(--vp-font-family-base);
+        font-size: 16px;
+        font-weight: 400;
+        color: var(--vp-c-text-1);
+        background-color: var(--vp-c-bg);
+        font-synthesis: style;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+    </style>
+    <!-- PREVIEW-OPTIONS-HEAD-HTML -->
+    <script type="importmap">
+      <!--IMPORT_MAP-->
+    </script>
+    <script>
+      ;(() => {
+        let scriptEls = []
+
+        window.process = { env: {} }
+        window.__modules__ = {}
+
+        window.__export__ = (mod, key, get) => {
+          Object.defineProperty(mod, key, {
+            enumerable: true,
+            configurable: true,
+            get,
+          })
+        }
+
+        window.__dynamic_import__ = (key) => {
+          return Promise.resolve(window.__modules__[key])
+        }
+
+        async function handle_message(ev) {
+          let { action, cmd_id } = ev.data
+          const send_message = (payload) =>
+            parent.postMessage({ ...payload }, ev.origin)
+          const send_reply = (payload) => send_message({ ...payload, cmd_id })
+          const send_ok = () => send_reply({ action: 'cmd_ok' })
+          const send_error = (message, stack) => {
+            send_reply({ action: 'cmd_error', message, stack })
+            return false
+          }
+
+          if (action === 'execute') {
+            try {
+              if (scriptEls.length) {
+                scriptEls.forEach((el) => {
+                  document.head.removeChild(el)
+                })
+                scriptEls.length = 0
+              }
+
+              let { script: scripts } = ev.data.args
+              if (typeof scripts === 'string') scripts = [scripts]
+
+              for (const script of scripts) {
+                const scriptEl = document.createElement('script')
+                scriptEl.setAttribute('type', 'module')
+                const done = new Promise((resolve) => {
+                  window.__next__ = resolve
+                })
+                scriptEl.innerHTML = script + `\nwindow.__next__()`
+                document.head.appendChild(scriptEl)
+                scriptEl.onerror = (err) => {
+                  send_error(err.message, err.stack)
+                  return true
+                }
+                scriptEls.push(scriptEl)
+                await done
+              }
+              send_ok()
+            } catch (e) {
+              send_error(e.message, e.stack)
+            }
+          }
+
+          if (action === 'catch_clicks') {
+            try {
+              const top_origin = ev.origin
+              document.body.addEventListener('click', (event) => {
+                if (event.which !== 1) return
+                if (event.metaKey || event.ctrlKey || event.shiftKey) return
+                if (event.defaultPrevented) return
+
+                // ensure target is a link
+                let el = event.target
+                while (el && el.nodeName !== 'A') el = el.parentNode
+                if (!el || el.nodeName !== 'A') return
+
+                if (
+                  el.hasAttribute('download') ||
+                  el.getAttribute('rel') === 'external' ||
+                  el.target ||
+                  el.href.startsWith('javascript:') ||
+                  !el.href
+                )
+                  return
+
+                event.preventDefault()
+
+                if (el.href.startsWith(top_origin)) {
+                  const url = new URL(el.href)
+                  if (url.hash[0] === '#') {
+                    window.location.hash = url.hash
+                    return
+                  }
+                }
+
+                window.open(el.href, '_blank')
+              })
+              send_ok()
+            } catch (e) {
+              send_error(e.message, e.stack)
+            }
+          }
+        }
+        
+        window.addEventListener('message', handle_message, false)
+
+        window.onerror = function (msg, url, lineNo, columnNo, error) {
+          // ignore errors from import map polyfill - these are necessary for
+          // it to detect browser support
+          if (msg.includes('module specifier “vue”')) {
+            // firefox only error, ignore
+            return false
+          }
+          if (msg.includes("Module specifier, 'vue")) {
+            // Safari only
+            return false
+          }
+          try {
+            parent.postMessage({ action: 'error', value: error }, '*')
+            console.error(error)
+            return true
+          } catch (e) {
+            parent.postMessage({ action: 'error', value: msg }, '*')
+            console.error(error)
+            return true
+          }
+        }
+
+        window.addEventListener('unhandledrejection', (event) => {
+          if (
+            event.reason.message &&
+            event.reason.message.includes('Cross-origin')
+          ) {
+            event.preventDefault()
+            return
+          }
+          try {
+            parent.postMessage(
+              { action: 'unhandledrejection', value: event.reason },
+              '*',
+            )
+          } catch (e) {
+            parent.postMessage(
+              { action: 'unhandledrejection', value: event.reason.message },
+              '*',
+            )
+          }
+        })
+      })()
+    </script>
+    <!-- ES Module Shims: Import maps polyfill for modules browsers without import maps support (all except Chrome 89+) -->
+    <script
+      async
+      src="https://cdn.jsdelivr.net/npm/es-module-shims@1.5.18/dist/es-module-shims.wasm.js"
+    ></script>
+    <script type="module">
+      const ignoresTags = [
+        'Feature flags __VUE_OPTIONS_API__, __VUE_PROD_DEVTOOLS__, __VUE_PROD_HYDRATION_MISMATCH_DETAILS__',
+        'An iframe which has both allow-scripts and allow-same-origin',
+        'Component is missing template or render function'
+      ]
+      const ignorePattern = new RegExp(
+        ignoresTags
+          .map((tag) => tag.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'))
+          .join('|'),
+        'i',
+      )
+      ;[
+        'clear',
+        'count',
+        'countReset',
+        'debug',
+        'error',
+        'group',
+        'groupCollapsed',
+        'groupEnd',
+        'info',
+        'log',
+        'table',
+        'time',
+        'timeEnd',
+        'timeLog',
+        'warn',
+        'assert'
+        // not support yet
+        // 'assert'
+        // 'dir',
+        // 'groupCollapsed',
+        // 'assert',
+        // 'trace'
+      ].forEach((level) => {
+        const original = console[level]
+        console[level] = (...args) => {
+          if (
+            args.some(
+              (arg) => typeof arg === 'string' && ignorePattern.test(arg),
+            )
+          ) {
+            return
+          }
+
+          const encodedArgs = window.encodeConsoleArgs(level, ...args)
+          if (encodedArgs) {
+            parent.postMessage({
+              action: 'console_api',
+              args: encodedArgs,
+            })
+          }
+          original(...args)
+        }
+      })
+    </script>
+  </head>
+  <body>
+    <!--PREVIEW-OPTIONS-PLACEHOLDER-HTML-->
+  </body>
+</html>

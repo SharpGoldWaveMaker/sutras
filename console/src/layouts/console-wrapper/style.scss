@@ -1,0 +1,9 @@
+@include b('console-wrapper') {
+  margin: 4px;
+  padding: 0 2px;
+  background-color: var(--su-console-bg);
+  font-size: 12px;
+  height: 100%;
+  font-family: 'Consolas', 'DejaVu Sans Mono', 'Fira Code', 'Roboto Mono', monospace;
+  white-space: pre-wrap;
+}

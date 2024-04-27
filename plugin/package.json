@@ -1,0 +1,56 @@
+{
+  "name": "@sgwm-sutras/plugin",
+  "type": "module",
+  "version": "0.0.1",
+  "description": "vitepress plugin for quickly build demo-centric technical documentation",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SharpGoldWaveMaker/sutras.git"
+  },
+  "keywords": ["sutras", "demo", "repl", "vitepress", "markdown", "ssg", "vue", "vite"],
+  "author": "skogkatt <wavemakers.sharpgold@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SharpGoldWaveMaker/sutras/issues"
+  },
+  "homepage": "https://sharpgoldwavemaker.github.io/sutras.docs",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.mts",
+      "default": "./dist/index.mjs"
+    }
+  },
+  "main": "./dist/index.mjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.mts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "rimraf dist && NODE_OPTIONS=--max-old-space-size=4096 rollup -c",
+    "dev": "rollup -cw"
+  },
+  "peerDependencies": {
+    "@sgwm-sutras/shared": "workspace:*",
+    "@vue/compiler-sfc": "^3.4.21",
+    "markdown-it": "^14.1.0",
+    "markdown-it-container": "^4.0.0"
+  },
+  "dependencies": {
+    "@manypkg/find-root": "^2.2.1",
+    "@manypkg/get-packages": "^2.2.1",
+    "@manypkg/tools": "^1.1.0",
+    "@sgwm-sutras/shared": "workspace:*",
+    "@vue/compiler-sfc": "^3.4.21",
+    "glob": "^10.3.10",
+    "lru-cache": "^10.2.0",
+    "markdown-it": "^14.1.0",
+    "markdown-it-container": "^4.0.0",
+    "resolve-esm": "^2.0.3"
+  },
+  "devDependencies": {
+    "@types/markdown-it": "^13.0.7",
+    "@types/markdown-it-container": "^2.0.9",
+    "chokidar": "^3.6.0"
+  }
+}

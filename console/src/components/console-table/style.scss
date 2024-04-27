@@ -1,0 +1,29 @@
+@import "../../style/styles.css";
+@import "../../style/wrap.css";
+@import "../../style/vars.css";
+
+
+@include b('console-table'){
+  @include e('table'){
+    margin-top: 0!important;
+    margin-bottom: 4px!important;
+    border-color: #D3E3FD!important;
+    width: 100%;
+    display: table!important;
+    & th,tr,td {
+      border-color: #D3E3FD!important;
+      font-size: 12px!important;
+      padding: 0 4px!important;
+      font-weight: lighter!important;
+    }
+    & tr {
+      background-color: var(--vp-c-bg-soft)!important;
+    }
+    & tr:nth-child(2n){
+      background-color: var(--vp-c-bg)!important;
+    }
+    & th,td {
+      background-color: transparent!important;
+    }
+  }
+}

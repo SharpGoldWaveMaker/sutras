@@ -1,0 +1,25 @@
+@include b(device-switch){
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  cursor: pointer;
+  font-size: 12px;
+  padding: 0 4px;
+  border-radius: 4px;
+  &.ant-dropdown-open {
+    background-color: var(--vp-c-gray-1);
+  }
+  @include e(label){
+    margin: 0 4px;
+  }
+
+  @include m(active) {
+    background-color: var(--vp-c-gray-1)
+  }
+
+  @include e(icon){
+    flex:  0 0 auto;
+    height: 16px;
+    width: 16px;
+  }
+}

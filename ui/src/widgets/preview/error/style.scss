@@ -1,0 +1,11 @@
+@include b('preview-error'){
+  border-width: 2px;
+  position: absolute;
+  top: 2em;
+  width: 100%;
+  & > div.ant-alert{
+    padding: 8px!important;
+    border-radius: 0!important;
+    border: 1px solid #ffccc7;
+  }
+}

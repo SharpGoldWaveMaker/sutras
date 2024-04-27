@@ -1,0 +1,12 @@
+.su-console-debug-icon{
+  display: inline-block;
+  text-align: center;
+  height: 12px;
+  line-height: 12px;
+  vertical-align: middle;
+}
+
+.su-console-debug-icon svg {
+  height: 100%;
+  width: 100%;
+}

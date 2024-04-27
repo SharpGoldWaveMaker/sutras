@@ -1,0 +1,41 @@
+{
+  "name": "docs",
+  "type": "module",
+  "version": "0.0.1",
+  "description": "vitepress plugin for quickly build demo-centric technical documentation",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SharpGoldWaveMaker/sutras.git"
+  },
+  "keywords": ["sutras", "demo", "repl", "vitepress", "markdown", "ssg", "vue", "vite"],
+  "author": "skogkatt <wavemakers.sharpgold@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SharpGoldWaveMaker/sutras/issues"
+  },
+  "homepage": "https://sharpgoldwavemaker.github.io/sutras.docs",
+  "scripts": {
+    "docs:dev": "rimraf ./.vitepress/cache && vitepress dev",
+    "docs:build": "vitepress build",
+    "docs:preview": "vitepress preview"
+  },
+  "dependencies": {
+    "@ant-design/icons-vue": "^7.0.1",
+    "@lunariajs/core": "^0.0.31",
+    "@sgwm-sutras/console": "workspace:^",
+    "@sgwm-sutras/shared": "workspace:^",
+    "@sgwm-sutras/ui": "workspace:^",
+    "ant-design-vue": "^4.1.2",
+    "dayjs": "^1.11.10",
+    "unocss": "^0.58.6",
+    "vue": "^3.4.21"
+  },
+  "devDependencies": {
+    "@sgwm-sutras/plugin": "workspace:^",
+    "@sgwm-sutras/style": "workspace:^",
+    "@vitejs/plugin-vue-jsx": "^3.1.0",
+    "unplugin-vue-components": "^0.26.0",
+    "vite-svg-loader": "^5.1.0",
+    "vitepress": "1.0.0-rc.45"
+  }
+}

@@ -1,0 +1,20 @@
+.console-wrap {
+  font-family: Consolas, Lucida Console, Courier New, monospace, sans-serif;
+  white-space: pre-wrap;
+
+  --bg-color: var(--su-console-bg);
+  background-color: var(--bg-color);
+  color: var(--c-text);
+  font-size: 13px;
+  line-height: 1.2;
+
+  position: relative;
+  width: 100%;
+
+  padding-right: (10px + 7 * 2);
+}
+
+.console-wrap:deep(a) {
+  color: var(--c-anchor);
+  text-decoration: underline;
+}

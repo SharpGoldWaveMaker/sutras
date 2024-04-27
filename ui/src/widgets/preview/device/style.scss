@@ -1,0 +1,15 @@
+@include b('preview-device'){
+  height: 100%;
+  width: 100%;
+  background-color: var(--vp-code-block-bg);
+  overflow: hidden;
+
+  @include e('content'){
+    height: 100%;
+    width: 100%;
+    --tw-shadow-color: 0, 0, 0;
+    --tw-shadow: 0 10px 15px -3px rgba(var(--tw-shadow-color), 0.1), 0 4px 6px -2px rgba(var(--tw-shadow-color), 0.05);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+    background-color: var(--vp-c-bg);
+  }
+}

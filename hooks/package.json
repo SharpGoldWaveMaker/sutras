@@ -1,0 +1,58 @@
+{
+  "name": "@sgwm-sutras/hooks",
+  "type": "module",
+  "version": "0.0.1",
+  "description": "vitepress plugin for quickly build demo-centric technical documentation",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SharpGoldWaveMaker/sutras.git"
+  },
+  "keywords": ["sutras", "demo", "repl", "vitepress", "markdown", "ssg", "vue", "vite"],
+  "author": "skogkatt <wavemakers.sharpgold@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SharpGoldWaveMaker/sutras/issues"
+  },
+  "homepage": "https://sharpgoldwavemaker.github.io/sutras.docs",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.mts",
+      "default": "./dist/index.mjs"
+    }
+  },
+  "main": "./dist/index.mjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.mts",
+  "typings": "./dist/index.d.mts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "rimraf dist && NODE_OPTIONS=--max-old-space-size=4096 rollup -c",
+    "dev": "rollup -cw"
+  },
+  "peerDependencies": {
+    "@shikijs/transformers": "^1.2.0",
+    "@sgwm-sutras/console": "workspace:^",
+    "@sgwm-sutras/shared": "workspace:^",
+    "@vueuse/core": "^10.9.0",
+    "@vueuse/shared": "^10.9.0",
+    "ant-design-vue": "^4.1.2",
+    "shiki": "^1.2.0",
+    "vitepress": "1.0.0-rc.45",
+    "vue": "^3.4.21"
+  },
+  "dependencies": {
+    "@shikijs/transformers": "^1.2.0",
+    "@sgwm-sutras/console": "workspace:^",
+    "@sgwm-sutras/shared": "workspace:^",
+    "@vueuse/core": "^10.9.0",
+    "@vueuse/shared": "^10.9.0",
+    "ant-design-vue": "^4.1.2",
+    "shiki": "^1.2.0",
+    "vue": "^3.4.21"
+  },
+  "devDependencies": {
+    "vitepress": "1.0.0-rc.45"
+  }
+}

@@ -1,0 +1,8 @@
+@include b('block-layout'){
+  @include e('toolbar'){
+    position: sticky;
+    top: var(--vp-nav-height);
+    z-index: 2;
+    background-color: var(--vp-c-bg);
+  }
+}

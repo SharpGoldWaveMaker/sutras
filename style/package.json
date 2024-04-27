@@ -1,0 +1,51 @@
+{
+  "name": "@sgwm-sutras/style",
+  "version": "0.0.1",
+  "description": "vitepress plugin for quickly build demo-centric technical documentation",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SharpGoldWaveMaker/sutras.git"
+  },
+  "keywords": [
+    "sutras",
+    "demo",
+    "repl",
+    "vitepress",
+    "markdown",
+    "ssg",
+    "vue",
+    "vite"
+  ],
+  "author": "sgwm_skogkatt <wavemakers.sharpgold@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SharpGoldWaveMaker/sutras/issues"
+  },
+  "homepage": "https://sharpgoldwavemaker.github.io/sutras.docs",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/index.js"
+    },
+    "./dist/scss": {
+      "import": "./dist/scss/index.scss"
+    }
+  },
+  "scripts": {
+    "build": "tsc && node script.js"
+  },
+  "dependencies": {
+    "@types/node": "^20.12.3",
+    "vue": "^3.4.21"
+  },
+  "devDependencies": {
+    "fast-glob": "^3.3.2",
+    "fs-extra": "^11.2.0"
+  }
+}

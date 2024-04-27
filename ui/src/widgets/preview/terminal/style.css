@@ -1,0 +1,79 @@
+/* .terminal-box{
+    min-height: 350px;
+} */
+
+.terminal-box .title-icon {
+    height: 1.3rem;
+    width: 1.3rem;
+}
+
+.terminal-box .main {
+  min-height: 26px;
+}
+
+.terminal-drawer {
+  margin-top: 8px;
+}
+
+/* override */
+:root{
+    --c-border: var(--vp-c-gray-2);
+    /* text */
+    --c-text: var(--vp-c-text-1);
+    --c-text-number: var(--vp-c-note-1);
+    /* warning */
+    --c-text-warn: var(--vp-c-warning-1);
+    --c-bg-warn: var(--vp-c-warning-soft);
+    --c-border-warn: var(--vp-c-gray-2);
+    --c-badge-warn: var(--vp-badge-warning-text);
+
+    /* error */
+    --c-text-error: var(--vp-c-danger-1);
+    --c-bg-error: var(--vp-c-danger-soft);
+    --c-border-error: var(--vp-c-gray-2);
+    --c-badge-error: var(--vp-badge-danger-text);
+
+    /* debug */
+    --c-text-debug: var(--vp-c-note-1);
+
+    /* table */
+    --c-border-table: var(--vp-c-divider);
+    --c-bg-table-2np1: var(--vp-c-bg-soft);
+
+
+
+    --c-triangle-fill: var(--vp-c-text-1);
+    --c-anchor: var(--vp-c-brand-1);
+    
+    --c-badge: #5db0d7;
+   
+    --c-text-bint: #7b896f;
+    --c-text-size: #9aa09a;
+    --c-text-string: var(--vp-c-danger-1);
+    --c-text-char-f: #f29766;
+    --c-text-propName: var(--vp-c-danger-1);
+    --c-text-proto: #9aa0a6;
+    --c-text-propHidden: #45778f;
+    --c-text-two-dot: #ffffff;
+    --c-el-tag: #3aa3cc;
+    --c-el-attr-key: #7bbbb9;
+    --c-el-attr-val: #f27739;
+    --c-el-comment: #896d4b;
+    --c-el-doctype: #b6b493;
+
+
+  --su-console-line-height: 14px;
+  --su-console-bg: 'transparent';
+  --su-console-bg-warning: var(--vp-c-warning-soft);
+  --su-console-bg-error: var(--vp-c-danger-soft);
+
+  --su-console-badge: var(--vp-c-text-3);
+  --su-console-badge-warn: var(--vp-c-warning-1);
+  --su-console-badge-error: var(--vp-c-danger-1);
+  --su-console-badge-debug: var(--vp-c-note-1);
+  --su-console-badge-text: var(--vp-button-brand-text);
+}
+
+.terminal-drawer table {
+    border-color: var(--vp-c-divider);
+}

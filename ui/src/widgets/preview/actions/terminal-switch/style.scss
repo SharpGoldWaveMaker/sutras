@@ -1,0 +1,21 @@
+@include b('terminal-switch'){
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  cursor: pointer;
+  font-size: 12px;
+  padding: 0 4px;
+  border-radius: 4px;
+  height: 24px;
+  &:hover {
+    background-color: var(--vp-c-gray-1);
+  }
+  @include m('active'){
+    background-color: var(--vp-c-gray-1);
+  }
+  .icon {
+    flex: 0 0 auto;
+    height: 16px;
+    width: 16px;
+  }
+}
