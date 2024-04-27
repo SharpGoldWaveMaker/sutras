@@ -16,7 +16,7 @@ yarn.lock
 Thumbs.db
 
 # 构建输出
-/dist
+dist/
 /build
 /out
 /cache
