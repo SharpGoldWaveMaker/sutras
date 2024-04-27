@@ -1,3 +1,10 @@
+<p align="center">
+  <a href="https://sharpgoldwavemaker.github.io/sutras.docs" target="_blank" rel="noopener noreferrer">
+    <img width="180" src="https://sharpgoldwavemaker.github.io/sutras.docs/logo.svg" alt="Sutras logo">
+  </a>
+</p>
+<br/>
+
 # Sutras
 
 ## 什么是 Sutras？

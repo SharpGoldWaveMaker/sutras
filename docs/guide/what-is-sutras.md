@@ -60,7 +60,7 @@ Sutras根据了常见场景总结了[使用案例](./examples)，你也通过案
 
 ## 书写体验 {#developer-experience}
 
-Saturas 致力于提供良好的库研发体验。
+Sutras 致力于提供良好的库研发体验。
 
 - **测试驱动**：Sutras基于[Vite](https://cn.vitejs.dev/) & [Vitepress](https://vitepress.dev/)，实现即时的服务器启动，始终立即反映 (<100ms) 的编辑变化，无需重新加载页面，提供良好的测试驱动的研发体验。
 
