@@ -266,7 +266,7 @@ function useSandbox(options) {
   const isTerminal = inject(IsTerminialInjectKey);
   const linkStore = new LinkStore();
   const encoder = createEncoder(linkStore);
-  if (consoleLinkStore?.value) {
+  if (consoleLinkStore && !consoleLinkStore.value) {
     consoleLinkStore.value = linkStore;
   }
   function init() {
