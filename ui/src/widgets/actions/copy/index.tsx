@@ -1,14 +1,14 @@
 import { defineComponent, inject, ref } from "vue";
 import message from 'ant-design-vue/es/message'
 import Tooltip from 'ant-design-vue/es/tooltip'
-import { ReplCollapseKey, ReplFilesInjectKey, ReplActiveFileKey } from '@sgwm-sutras/hooks';
+import { ReplFilesInjectKey, ReplActiveFileKey } from '@sgwm-sutras/hooks';
 import { useClipboard } from '@vueuse/core'
 import SnippetsOutlined from '@ant-design/icons-vue/SnippetsOutlined'
 
 const CopyAction = defineComponent({
     name: 'CopyAction',
     setup(){
-        const collapse = inject(ReplCollapseKey)
+        // const collapse = inject(ReplCollapseKey)
         const files = inject(ReplFilesInjectKey)
         const activeFileKey = inject(ReplActiveFileKey)
         const source = ref('file-code-copy')
@@ -28,7 +28,7 @@ const CopyAction = defineComponent({
                 }
             }
         } 
-        if(!isSupported.value || collapse.value){
+        if(!isSupported.value){ //|| collapse.value
             return
         }
         return () => (

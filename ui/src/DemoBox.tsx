@@ -11,6 +11,7 @@ import Toolbar from "./widgets/toolbar";
 import CollapseAction from "./widgets/actions/collapse";
 import FullscreenAction from "./widgets/actions/fullscreen";
 import EditAction from "./widgets/actions/edit";
+import CopyAction from "./widgets/actions/copy";
 
 // 管理内容
 const DemoBox = defineComponent({
@@ -24,6 +25,7 @@ const DemoBox = defineComponent({
                     <CollapseAction/>
                     <FullscreenAction/>
                     <EditAction/>
+                    <CopyAction/>
                 </Toolbar>
             )
         }
