@@ -1,6 +1,6 @@
 import type { UserConfig } from '@sgwm-sutras/shared'
 import { formatSFC, isVueDocsSFC, parseSFC } from '@sgwm-sutras/shared'
-import type { PluginOption, UserConfig as ViteUserConfig, ResolvedConfig as ViteResolvedConfig, Plugin } from 'vite'
+import type { UserConfig as ViteUserConfig, ResolvedConfig as ViteResolvedConfig, Plugin } from 'vite'
 import { injectResolveAlias } from './injectResolveAlias'
 import { Service } from './service'
 import { disableMinifyInternalExports } from './disableMinifyInternalExports'
