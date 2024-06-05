@@ -1,13 +1,22 @@
 {
   "name": "@sgwm-sutras/plugin",
   "type": "module",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "vitepress plugin for quickly build demo-centric technical documentation",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/SharpGoldWaveMaker/sutras.git"
   },
-  "keywords": ["sutras", "demo", "repl", "vitepress", "markdown", "ssg", "vue", "vite"],
+  "keywords": [
+    "sutras",
+    "demo",
+    "repl",
+    "vitepress",
+    "markdown",
+    "ssg",
+    "vue",
+    "vite"
+  ],
   "author": "skogkatt <wavemakers.sharpgold@gmail.com>",
   "license": "MIT",
   "bugs": {
@@ -49,7 +58,6 @@
     "resolve-esm": "^2.0.3"
   },
   "devDependencies": {
-    "@types/markdown-it": "^13.0.7",
     "@types/markdown-it-container": "^2.0.9",
     "chokidar": "^3.6.0"
   }

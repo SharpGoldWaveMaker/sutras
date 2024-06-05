@@ -77,9 +77,7 @@ function parseDemoFile(file: SourceFile, page: Page){
 
 
 function parseDemoMeta(config: ResolvedConfig, file: SourceFile, context: Omit<DemoContextBasic, 'meta'>): DemoMeta {
-  let meta = Object.assign({}, {
-    defaultPreviewMode: file.extension === '.vue' ? 'block' : 'terminal'
-  }, file.parsed.docMeta || {})
+  let meta = Object.assign({}, file.parsed.docMeta || {})
   let demoConfig: DemoMeta = {}
   if(config.demo){
     demoConfig = Object.keys(config.demo).reduce((conf, k) => {
@@ -94,7 +92,9 @@ function parseDemoMeta(config: ResolvedConfig, file: SourceFile, context: Omit<D
     }, {} as DemoConfig)
   }
 
-  return Object.assign({}, demoConfig || {}, meta || {})
+  return Object.assign({
+    defaultPreviewMode: file.extension === '.vue' ? 'block' : 'terminal'
+  }, demoConfig || {}, meta || {})
 }
 
 
