@@ -19,7 +19,7 @@ Thumbs.db
 dist/
 /build
 /out
-/cache
+cache
 
 # 测试文件
 /coverage
@@ -50,3 +50,6 @@ lerna-debug.log
 # 其他常见忽略项
 /temp
 /tmp
+
+bundle-analysis.html
+pnpm-lock.yaml

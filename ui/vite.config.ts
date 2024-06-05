@@ -6,7 +6,7 @@ import dts from 'vite-plugin-dts'
 import vue from '@vitejs/plugin-vue'
 import vuejsx from '@vitejs/plugin-vue-jsx'
 import svg from 'vite-svg-loader'
-import { analyzer } from 'vite-bundle-analyzer'
+// import { analyzer } from 'vite-bundle-analyzer'
 import windiCSS from 'vite-plugin-windicss'
 
 const require = createRequire(import.meta.url)
@@ -49,7 +49,7 @@ export default defineConfig({
     vuejsx(),
     svg(),
     dts(),
-    analyzer(),
+    // analyzer(),
     windiCSS(),
   ],
 })
