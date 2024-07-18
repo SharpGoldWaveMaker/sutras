@@ -13,7 +13,7 @@ export function createPathMatcher(config: ResolvedConfig){
         } else {
             matchRules = getRemoteMatchRules(token, config)
         }
-        const matched = globSync(matchRules)
+        const matched = globSync(matchRules, {windowsPathsNoEscape: true}).map((p: string) => p.replace(/\\/g, '/'))
         if(!matched?.length){
             throw Error(`Unable to match any demos!`)
         }

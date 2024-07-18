@@ -1,6 +1,6 @@
 import { LRUCache } from 'lru-cache';
 import type Markdownit from 'markdown-it'
-import { kebabCase, SFCParseResult, parseDocMetaBadge, SFCDocMeta, formatSFC, formatSFCJS, DemoContext, langFromExtension, TSParseResult, SourceFile, DemoFile} from '@sgwm-sutras/shared'
+import { kebabCase, SFCParseResult, parseDocMetaBadge, SFCDocMeta, formatSFC, formatSFCJS, DemoContext, langFromExtension, TSParseResult, SourceFile, DemoFile, ParseResult, ParseBasicResult} from '@sgwm-sutras/shared'
 import { parseAttrs, type Attrs } from './attrs';
 
 const cache = new LRUCache<string, string>({ max: 1024 });
@@ -25,7 +25,7 @@ export function transform(md: Markdownit, token: Markdownit.Token): string {
 function doTransform(md: Markdownit, attrs: Attrs) {
   const {identifier, codes} = attrs || {}
   const codesParsed = JSON.parse(decodeURIComponent(codes)) as TransCodeItem[];
-  const {docMeta, docContent} = JSON.parse(decodeURIComponent(codesParsed[0].parsed)) as SFCParseResult
+  const {docMeta, docContent} = codesParsed[0].parsed as ParseResult
 
   const titleHtml = renderTitle(md, identifier, docMeta)
   const descriptionHtml = docContent ? md.render(docContent).trim() : ''
@@ -74,15 +74,13 @@ function renderTitle(md: Markdownit, identifier: string, docMeta?: SFCDocMeta){
   return md.render(`## ${title} ${badgeHtml ? badgeHtml : ''} {#${kebabCase(identifier)}}`).trim()
 }
 
-type TransCodeItem = Pick<DemoFile, 'identifier' | 'extension'> & {
-  parsed: string
-}
+type TransCodeItem = Pick<DemoFile, 'identifier' | 'extension' | 'parsed'>
 
 function renderCodeSlotsStr(md: Markdownit, transCodeItems: TransCodeItem[]){
   return transCodeItems.reduce((result: string, {identifier, extension, parsed}) => {
     const lang = langFromExtension(extension)
     if(lang === 'vue'){
-      const parsedSFC = JSON.parse(decodeURIComponent(parsed)) as SFCParseResult
+      const parsedSFC = parsed as SFCParseResult
       result += `${result ? '\n  ' : ''}<template #code-${identifier}>
     ${renderCode(md, formatSFC(parsedSFC), lang, parsedSFC.docMeta?.highlight)}
   </template>`
@@ -95,7 +93,7 @@ function renderCodeSlotsStr(md: Markdownit, transCodeItems: TransCodeItem[]){
     }
 
     if(lang === 'ts' || lang === 'tsx'){
-      const parsedTS = JSON.parse(decodeURIComponent(parsed)) as TSParseResult
+      const parsedTS = parsed as TSParseResult
       result += `${result ? '\n  ' : ''}<template #code-${identifier}>
     ${renderCode(md, parsedTS.ts, lang)}
   </template>`
@@ -106,7 +104,7 @@ function renderCodeSlotsStr(md: Markdownit, transCodeItems: TransCodeItem[]){
     }
 
     result += `${result ? '\n  ' : ''}<template #code-${identifier}>
-    ${renderCode(md, parsed as string, lang)}
+    ${renderCode(md, parsed.code, lang)}
   </template>`
   
     return result

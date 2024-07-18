@@ -4,7 +4,7 @@ import { LRUCache } from "lru-cache";
 import { transformTS } from '../transform'
 import { parseMatter } from './matter';
 import { head, tail } from '../../utils';
-import { ParseResult } from './default';
+import { ParseBasicResult } from './default';
 
 const descriptorCache = new LRUCache<string, SFCDescriptor>({ max: 1024 });
 
@@ -13,7 +13,7 @@ type ParseSFCDescriptorResult = {
     descriptor?: SFCDescriptor
 }
 
-export interface SFCParseResult extends ParseResult {
+export interface SFCParseResult extends ParseBasicResult {
     /**
      * @name template源代码
      */
@@ -39,10 +39,6 @@ export interface SFCParseResult extends ParseResult {
      * @description 如果不使用TS，jsCode = script
      */
     jsCode?: string,
-    /**
-     * @name 文档内容
-     */
-    docContent?: string
 }
 
 export function parseSFCDescriptor(rawContent: string): ParseSFCDescriptorResult {

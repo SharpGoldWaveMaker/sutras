@@ -1,5 +1,5 @@
 import { DemoContext } from './types'
-import { File } from '../file'
+import { File, ParseResult } from '../file'
 import { pick } from '../utils'
 
 export * from './format'
@@ -17,7 +17,10 @@ export function parseFilesFromDemoContext(context: DemoContext){
                 'isEntry',
                 'pathFromEntry',
             ]),
-            parsed: JSON.parse(decodeURIComponent(file.parsed as unknown as string)),
+            parsed: {
+              ...file.parsed,
+              code: decodeURIComponent(file.parsed.code)
+            },
             code: decodeURIComponent(file.code)
         }
         return new File(option)

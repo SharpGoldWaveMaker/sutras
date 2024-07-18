@@ -1,6 +1,6 @@
 import { transformTS } from "../transform"
 import { parseCommentMeta } from "./comment";
-import { ParseResult } from "./default";
+import { ParseBasicResult } from "./default";
 
 export async function parseTS(rawContent: string): Promise<TSParseResult> {
     return {
@@ -11,7 +11,7 @@ export async function parseTS(rawContent: string): Promise<TSParseResult> {
     }
 }
 
-export interface TSParseResult extends ParseResult {
+export interface TSParseResult extends ParseBasicResult {
     js: string;
     ts: string;
 }

@@ -1,14 +1,18 @@
 import { DemoMeta } from "../../demo";
 import { parseCommentMeta } from "./comment";
 
-export async function parseDefault(rawContent: string): Promise<ParseResult> {
+export async function parseDefault(rawContent: string): Promise<ParseBasicResult> {
     return {
         code: rawContent,
         docMeta: parseCommentMeta(rawContent)
     }
 }
 
-export interface ParseResult {
+export interface ParseBasicResult {
     code: string;
-    docMeta: DemoMeta
+    docMeta: DemoMeta;
+    /**
+     * @name 文档内容
+     */
+    docContent?: string
 }

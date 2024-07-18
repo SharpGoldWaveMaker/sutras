@@ -73,5 +73,6 @@ function transformDemoBlocks(content: string, token: DemoToken, contexts: DemoCo
     const codesStr = encodeURIComponent(JSON.stringify(codes))
     return str += `${str ? '\n' : ''}::: demo identifier="${identifier}" codes="${codesStr}"`
   }, '')
+  
   return content.replace(token._id, `${blocksStr}\n`)
 }

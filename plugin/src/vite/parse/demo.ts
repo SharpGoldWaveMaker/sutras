@@ -4,12 +4,10 @@ import {
     mergeImportMap,
     SourceFile,
     ResolvedConfig,
-    SFCParseResult,
     DemoConfig,
     DemoToken,
     DemoContextBasic,
     DemoMeta,
-    TSParseResult
  } from "@sgwm-sutras/shared";
  import { relative, dirname } from "path";
  import { parseImportMap } from "./import";
@@ -57,7 +55,7 @@ export function parseDemoContext(file: SourceFile, token: DemoToken,  page: Page
 function parseDemoFile(file: SourceFile, page: Page){
   let importMap = parseImportMap(file, page.path)
   const {filepath, includes, ...rest} = file
-  let path = relative(dirname(page.path), filepath)
+  let path = relative(dirname(page.path), filepath).replace(/\\/g, '/');
   if(!path.startsWith('./') || !path.startsWith('../')){
     path = `./${path}`
   }
@@ -71,7 +69,10 @@ function parseDemoFile(file: SourceFile, page: Page){
     code: encodeURIComponent(rest.code),
     isEntry: rest.isEntry,
     pathFromEntry: rest.pathFromEntry,
-    parsed: encodeURIComponent(JSON.stringify(rest.parsed)),
+    parsed: {
+      ...rest.parsed,
+      code: encodeURIComponent(rest.parsed.code)
+    }
   }
 }
 

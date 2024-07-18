@@ -1,6 +1,8 @@
 import { tuple } from "../../utils";
 import { SFCParseResult, TSParseResult } from "../parse";
-import { ParseResult } from "../parse/default";
+import { ParseBasicResult } from "../parse/default";
+
+export type ParseResult = ParseBasicResult | SFCParseResult | TSParseResult
 
 
 export type SourceFile = {
@@ -29,7 +31,7 @@ export type SourceFile = {
     /**
      * @name 解析结果
      */
-    parsed: ParseResult | SFCParseResult | TSParseResult;
+    parsed: ParseResult;
     /**
      * @name 是否是入口文件
      */
@@ -50,7 +52,7 @@ export class File {
     public readonly extension: FileExtension
     public readonly isEntry: boolean
     public readonly pathFromEntry: string
-    public readonly parsed: SFCParseResult | TSParseResult | string
+    public readonly parsed: ParseResult
     public code: FileCode
     public compiled: FileCompiled | null
     constructor(

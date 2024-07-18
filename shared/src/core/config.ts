@@ -109,6 +109,6 @@ export type SandboxConfigType = boolean | number | string
 export type ResolvedConfig = Omit<UserConfig, 'root'|'packages'> & {
     root: string
     packages: Package[]
-    base?: string
-    assetsDir?: string
+    base: string
+    assetsDir: string
 }

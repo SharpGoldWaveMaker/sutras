@@ -51,7 +51,9 @@ const defaultConfig: Partial<ResolvedConfig> = {
   demo: {
     enableSSR: false,
     defaultRenderMode: 'client'
-  }
+  },
+  assetsDir: '',
+  base: ''
 }
 
 export class Service {
@@ -66,7 +68,7 @@ export class Service {
       root,
       packages: [],
       importMap: mergeImportMap(defaultConfig.importMap!, userConfig?.importMap || {})
-    }
+    } as ResolvedConfig
     this.transformer = createTransformer(this.config)
   }
 

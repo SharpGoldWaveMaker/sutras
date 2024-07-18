@@ -2,19 +2,20 @@ import { browserPath } from '../../utils';
 import { File, FileExtension, SourceFile, fileExtensions } from "../types";
 import { parseSFC, type SFCParseResult } from "./sfc";
 import { parseTS, type TSParseResult } from './ts'
-import { parseDefault, type ParseResult} from './default'
+import { parseDefault, type ParseBasicResult} from './default'
 import { formatSFC } from "../format";
 
 export * from './sfc'
 export * from './ts'
 export * from './matter'
+export * from './default'
 
 const { normalize, parse, relative, dirname } = browserPath
 
 export async function parseFile(filepath: string, rawContent: string, entryPath: string): Promise<SourceFile | undefined> {
     const {ext, name} = parse(filepath)
     const isEntry = normalize(filepath) === normalize(entryPath)
-    let parsed: SFCParseResult | TSParseResult | ParseResult
+    let parsed: SFCParseResult | TSParseResult | ParseBasicResult
     if(!fileExtensions.includes(ext as FileExtension)){
         throw Error(`extension ${ext} not support`)
     }
