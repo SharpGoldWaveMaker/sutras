@@ -1,6 +1,6 @@
 {
   "name": "@sgwm-sutras/shared",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "vitepress plugin for quickly build demo-centric technical documentation",
   "repository": {
     "type": "git",
