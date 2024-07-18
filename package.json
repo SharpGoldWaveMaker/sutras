@@ -1,12 +1,21 @@
 {
   "private": true,
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "vitepress plugin for quickly build demo-centric technical documentation",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/SharpGoldWaveMaker/sutras.git"
   },
-  "keywords": ["sutras", "demo", "repl", "vitepress", "markdown", "ssg", "vue", "vite"],
+  "keywords": [
+    "sutras",
+    "demo",
+    "repl",
+    "vitepress",
+    "markdown",
+    "ssg",
+    "vue",
+    "vite"
+  ],
   "author": "skogkatt <wavemakers.sharpgold@gmail.com>",
   "license": "MIT",
   "bugs": {
