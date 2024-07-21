@@ -1,7 +1,7 @@
 {
   "name": "@sgwm-sutras/ui",
   "type": "module",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "vitepress plugin for quickly build demo-centric technical documentation",
   "repository": {
     "type": "git",
